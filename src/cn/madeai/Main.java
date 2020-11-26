@@ -126,6 +126,7 @@ public class Main {
             String person="";
             for (int j = 0; j < geneLength; j++) {
                 double rand=Math.random();
+//                todo: make rand's range from -1 to 2 can accelerate to figure out the answer
                 if (rand<.5){
                     person+="0";
                 }else {
