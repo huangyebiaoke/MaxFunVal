@@ -4,13 +4,13 @@ import java.util.Arrays;
 import java.util.Collections;
 /**
  * function: x*Math.sin(10*Math.PI*x)+2.
- * domain: -1<x<2
+ * domain: -1<=x=<2
  * Created by <a href="mailto:huangyebiaoke@outlook.com">huang</a> on 2020/11/25 13:28
  */
 public class Main {
     final static int geneLength=15;
     final static int iteration=30;
-    final static int populationSize=10;
+    final static int populationSize=1000;
 
 
     double decode(int[] person){
