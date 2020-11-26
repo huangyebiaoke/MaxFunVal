@@ -25,6 +25,7 @@ Some people's data in [./doc/persons.txt](./doc/persons.txt) file, and the fitne
 #### Other
 ![other](./doc/other.png)
 #### Reference
+- [SmartDot](https://github.com/huangyebiaoke/SmartDot)
 - [遗传算法求数值函数的最值](https://www.cnblogs.com/pkuimyy/p/11585310.html)
 - [遗传算法实现寻找函数最值](https://blog.csdn.net/springtostring/article/details/82221318)
 - [使用遗传算法求解函数最值](https://zhuanlan.zhihu.com/p/94477212)
