@@ -73,7 +73,7 @@ public class Main {
         for (int i = 0; i <= father.length(); i++) {
             String currentChild="";
             currentChild+=father.substring(0,i);
-            currentChild+=mother.substring(i,mother.length());
+            currentChild+=mother.substring(i);
             double currentFitness=calculateFitness(Utils.stringToArray(currentChild));
 //            System.out.println(currentChild);
             if (currentFitness>fitness){
@@ -159,7 +159,7 @@ public class Main {
         do{
             for (String person:population) {
                 double currentFitness=main.calculateFitness(Utils.stringToArray(person));
-                System.out.println("("+main.decode(Utils.stringToArray(person))+","+currentFitness+")");
+//                System.out.println("("+main.decode(Utils.stringToArray(person))+","+currentFitness+")");
                 if (currentFitness>bestFitness){
                     bestFitness=currentFitness;
                     bestPerson=person;
@@ -177,7 +177,5 @@ public class Main {
             }
             generation++;
         }while(generation!=iteration);
-
-
     }
 }
