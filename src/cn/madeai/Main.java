@@ -10,7 +10,7 @@ import java.util.Collections;
 public class Main {
     final static int geneLength=15;
     final static int iteration=30;
-    final static int populationSize=1000;
+    final static int populationSize=100;
 
 
     double decode(int[] person){
@@ -73,7 +73,7 @@ public class Main {
         for (int i = 0; i <= father.length(); i++) {
             String currentChild="";
             currentChild+=father.substring(0,i);
-            currentChild+=mother.substring(i);
+            currentChild+=mother.substring(i,mother.length());
             double currentFitness=calculateFitness(Utils.stringToArray(currentChild));
 //            System.out.println(currentChild);
             if (currentFitness>fitness){
@@ -100,9 +100,13 @@ public class Main {
         return child;
     }
     String mutateChild(String child){
-        double mutateRate=.01;
+        double mutateRate=.005;
         int[] tempChild=Utils.stringToArray(child);
         for (int i = 0; i < tempChild.length; i++) {
+//            染色体前半段的变异几率小,后半段的变异几率要大一点,这样即保证物种的多样性也保证稳定性;
+            if (i==tempChild.length/2){
+                mutateRate=.01;
+            }
             double rand=Math.random();
             if (rand<mutateRate){
                 tempChild[i]=tempChild[i]==0?1:0;
@@ -155,13 +159,13 @@ public class Main {
         do{
             for (String person:population) {
                 double currentFitness=main.calculateFitness(Utils.stringToArray(person));
-//                System.out.println("("+main.decode(Utils.stringToArray(person))+","+currentFitness+")");
+                System.out.println("("+main.decode(Utils.stringToArray(person))+","+currentFitness+")");
                 if (currentFitness>bestFitness){
                     bestFitness=currentFitness;
                     bestPerson=person;
+                    System.out.println("("+main.decode(Utils.stringToArray(bestPerson))+","+bestFitness+")");
                 }
             }
-            System.out.println("("+main.decode(Utils.stringToArray(bestPerson))+","+bestFitness+")");
             for (int i = 0; i < population.length; i++) {
                 fitnessList[i]=main.calculateFitness(Utils.stringToArray(population[i]));
 //                System.out.println(main.selectParent(fitnessList));
@@ -173,5 +177,7 @@ public class Main {
             }
             generation++;
         }while(generation!=iteration);
+
+
     }
 }
