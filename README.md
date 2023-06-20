@@ -22,8 +22,6 @@ final static int populationSize=10;
 ```
 ![function](./doc/fuc-picture-with-dot.svg)
 Some people's data in [./doc/persons.txt](./doc/persons.txt) file, and the fitness result in [./doc/fitness.txt](./doc/fitness.txt) file
-#### Other
-![other](./doc/other.png)
 #### Reference
 - [SmartDot](https://github.com/huangyebiaoke/SmartDot)
 - [遗传算法求数值函数的最值](https://www.cnblogs.com/pkuimyy/p/11585310.html)
